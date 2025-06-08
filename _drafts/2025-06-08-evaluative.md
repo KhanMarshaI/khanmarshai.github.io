@@ -22,15 +22,19 @@ To: x(ax + b) + 1
 # Solution
 One thing to consider is the possibility of result getting too large to store in a 32bit space. Hence, we use `long long int` to store upto 64bit of integer value.
 
+The coefficients are inserted in order x^0 to x^(n-1), hence, we store from the last index to first index. 
+
 ```cpp
 #include <iostream>
 using namespace std;
 
 long long int horner(int coeff[], int x){
-    long long int result = coeff[0];
+    long long int result = coeff[0]; //start from the inner most bracket (ax + b). store coefficient `a` in results
 
     for(int i=1; i<9; i++){
-        result = result*x + coeff[i];
+        result = result*x + coeff[i]; //do (ax + b)
+        //suppose c = (ax + b)
+        //in next iteration it does c*x + d
     }
 
     return result;
@@ -38,9 +42,10 @@ long long int horner(int coeff[], int x){
 
 int main() {
 
-    int coeff[9];
+    int coeff[9]; //array to store coefficient. each coefficient at ith index represents the coefficient of ith term.
     int x;
     
+    //start from last index (x^0th) term to first index (x^n-1) term.
     for(int i=8; i>=0; i--){
         cin >> coeff[i];
     }
