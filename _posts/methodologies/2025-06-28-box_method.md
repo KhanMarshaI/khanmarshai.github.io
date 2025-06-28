@@ -54,6 +54,15 @@ gobuster dir -u http://<ip> -w /usr/share/wordlists/dirbuster/directory-list-2.3
 * `whatweb`, `wappalyzer`, `curl -I`
 * Manually browse with **Burp Suite** or **ZAP Proxy**
 
+#### /etc/hosts
+
+Edit `/etc/hosts` file to create hosts entry and tinker with the web interface.
+
+```bash
+sudo vim /etc/hosts
+10.10.10.150 <box_name>.htb
+```
+
 ---
 
 ## 2. Foothold (Initial Access)
