@@ -1,6 +1,6 @@
 ---
 title: "Methodologies"
-date: 2025-06-28 2:42:00 +0500
+date: 2025-06-28 14:42:00 +0500
 categories: [Methodologies]
 tags: [HTB]
 ---

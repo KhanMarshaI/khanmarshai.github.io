@@ -27,4 +27,5 @@ _sass/vendors
 assets/js/dist
 
 #active-boxes
-_posts/_active
+_drafts/active
+assets/images/active
