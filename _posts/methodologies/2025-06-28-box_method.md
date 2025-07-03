@@ -182,10 +182,10 @@ Use [GTFOBins](https://gtfobins.github.io/) or [LOLBAS](https://lolbas-project.g
 
 ## Resources
 For active directory/window boxes:
-https://raw.githubusercontent.com/Orange-Cyberdefense/ocd-mindmaps/main/img/pentest_ad_dark_2023_02.svg
+[SVG](https://raw.githubusercontent.com/Orange-Cyberdefense/ocd-mindmaps/main/img/pentest_ad_dark_2023_02.svg)
 
 For encrypted/encoded passwords:
-https://gchq.github.io/CyberChef/
+[CyberChef](https://gchq.github.io/CyberChef/)
 
 
 ---
