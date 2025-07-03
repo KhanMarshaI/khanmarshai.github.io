@@ -49,6 +49,12 @@ After identifying services:
 gobuster dir -u http://<ip> -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 40 -x php,txt,html
 ```
 
+#### Subdomain Enumeration
+
+```bash
+ffuf -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt:FUZZ -u http://FUZZ.nocturnal.htb -t 80
+```
+
 #### Web Tech Stack & Analysis
 
 * `whatweb`, `wappalyzer`, `curl -I`
