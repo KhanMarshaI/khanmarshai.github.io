@@ -184,4 +184,8 @@ Use [GTFOBins](https://gtfobins.github.io/) or [LOLBAS](https://lolbas-project.g
 For active directory/window boxes:
 https://raw.githubusercontent.com/Orange-Cyberdefense/ocd-mindmaps/main/img/pentest_ad_dark_2023_02.svg
 
+For encrypted/encoded passwords:
+https://gchq.github.io/CyberChef/
+
+
 ---
