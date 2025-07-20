@@ -16,7 +16,7 @@ timezone: Asia/Karachi
 
 title: KhanMarshaI # the main title
 
-tagline: Just a guy navigating through the cyber obstacles. # it will display as the subtitle
+tagline: Just a guy navigating through the cyber obstacles. Exploring the exciting intersection of computer science theory and hands-on cybersecurity practice. # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   CTF writeups, security researches, DevSecOps.
@@ -98,7 +98,7 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: /assets/images/avatar.jpeg
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
