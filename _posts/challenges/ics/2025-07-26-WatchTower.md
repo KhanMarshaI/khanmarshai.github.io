@@ -2,7 +2,7 @@
 title: "Watch Tower"
 date: 2025-07-26 16:05:00 +0500
 categories: [Challenges]
-tags: [HTB, Very Easy, ICS]
+tags: [HTB, Very Easy, ICS, PCAP File, Modbus Protocol]
 ---
 
 ## PCAP File
@@ -46,6 +46,4 @@ One thing I noticed on each packet was a Unit number and a Function number. What
 ## Flag
 
 We follow the TCP stream and from Packet 129 we can start reading the flag HTB{xxx}, word by word.
-
-
 
