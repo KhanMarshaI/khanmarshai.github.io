@@ -2,7 +2,7 @@
 title: "GoodGames"
 date: 2025-07-31 14:04:00 +0500
 categories: [Boxes]
-tags: [HTB, Box, Linux, Easy]
+tags: [HTB, Box, Linux, Easy, SQLi, SSTI, Docker Escape, Permission Abuse]
 ---
 
 ## Recon
