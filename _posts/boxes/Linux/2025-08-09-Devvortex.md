@@ -2,7 +2,7 @@
 title: "Devvortex"
 date: 2025-08-09 16:13:00 +0500
 categories: [Boxes]
-tags: [HTB, Box, Linux, Easy]
+tags: [HTB, Box, Linux, Easy, Joomla, Webshell, RCE, Privilege Escalation, CVE-2023-1326, CVE-2023-23752, apport-cli]
 ---
 
 ## Recon
