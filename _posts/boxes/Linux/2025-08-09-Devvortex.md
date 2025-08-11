@@ -32,7 +32,7 @@ Nmap done: 1 IP address (1 host up) scanned in 27.87 seconds
 
 Let's interact with the web server on port 80.
 
-![alt text](/assets/images/active/devvortex-web.png)
+![alt text](/assets/images/devvortex-web.png)
 
 The web is rather simple, it has nothing that pops out as interesting. 
 
@@ -65,7 +65,7 @@ Finished
 
 Let's add this subdomain to our `/etc/hosts` file:
 
-![alt text](/assets/images/active/devvortex-subdomain.png)
+![alt text](/assets/images/devvortex-subdomain.png)
 
 Let's fingerprint this subdomain:
 
@@ -202,7 +202,7 @@ curl http://dev.devvortex.htb/api/index.php/v1/users?public=true
 
 We can edit the already added templates:
 
-![alt text](/assets/images/active/devvortex-templates.png)
+![alt text](/assets/images/devvortex-templates.png)
 
 Since these templates have `.php` extension, we can try to upload a PHP web shell.
 
