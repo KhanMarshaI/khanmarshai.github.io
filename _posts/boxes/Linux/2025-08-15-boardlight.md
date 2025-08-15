@@ -2,7 +2,7 @@
 title: "Boardlight"
 date: 2025-08-15 14:13:00 +0500
 categories: [Boxes]
-tags: [HTB, Box, Linux, Easy, Authenticated RCE, CVE-2023-30253,]
+tags: [HTB, Box, Linux, Easy, Authenticated RCE, CVE-2023-30253, Enlightenment Local Privilege Escalation]
 ---
 
 ## Recon
