@@ -2,7 +2,7 @@
 title: "SteamCloud"
 date: 2025-08-21 13:39:00 +0500
 categories: [Boxes]
-tags: [HTB, Box, Linux, Easy]
+tags: [HTB, Box, Linux, Easy, Kubernetes Exploitation, Exposed Kubelet, Malicious Pod]
 ---
 
 ## Recon
