@@ -2,7 +2,7 @@
 title: "Certified"
 date: 2025-08-22 15:13:00 +0500
 categories: [Boxes]
-tags: [HTB, Box, Windows, Medium]
+tags: [HTB, Box, Windows, Medium, WriteOwner, GenericWrite, GenericAll, pywhisker, Shadow Credentials Attack, Force Change Password, bloodyAD, bloodhound, AD-dacl Abuse, gettgtpkinit, getnthash, certipy, ESC9] 
 ---
 
 ## Box Creds
