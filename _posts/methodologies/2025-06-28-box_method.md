@@ -177,15 +177,6 @@ Use [GTFOBins](https://gtfobins.github.io/) or [LOLBAS](https://lolbas-project.g
 
 ---
 
-## Tool Summary Table
-
-| Phase             | Tools                                                                               |
-| ----------------- | ----------------------------------------------------------------------------------- |
-| Recon             | `nmap`, `gobuster`, `feroxbuster`, `whatweb`, `enum4linux`, `smbclient`, `snmpwalk` |
-| Foothold          | `searchsploit`, `msfvenom`, `sqlmap`, `Burp`, `wpscan`                              |
-| Priv. Escalation  | `linpeas`, `winPEAS`, `pspy`, `sudo -l`, `GTFOBins`                                 |
-| Post Exploitation | `hashdump`, `netstat`, `ss`, `history`, `creds`                                     |
-
 ## Resources
 For active directory/window boxes:
 [SVG](https://raw.githubusercontent.com/Orange-Cyberdefense/ocd-mindmaps/main/img/pentest_ad_dark_2023_02.svg)
